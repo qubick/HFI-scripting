@@ -6,10 +6,14 @@ var run = require('../lib')
     program = require('commander')
 
 program
-    .command('translator') 
+    .command('translator')
     .description('take semantics to run gcode generator')
     .action(function(src, options){
       if(program.time)
+        run.translator(program)
+      if(program.input)
+        run.translator(program)
+      if(program.local)
         run.translator(program)
     });
 
@@ -19,4 +23,5 @@ program
   .arguments('<file>')
   .option('-t, --time <elapsedtime>', 'time elapse')
   .option('-i, --input <inputfile>', 'input stl file')
+  .option('-l, --local <coordination>', 'coordination info of inserted object')
   .parse(process.argv);
