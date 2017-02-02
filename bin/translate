@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+var translate = require('../lib'),
+    program = require('commander')
+
+
+program
+    .command('run')
+    .description('take semantics to run gcode generator')
+    .action(function(src, options)){
+      if(program.time)
+        run.translator(program)
+    });
+
+program
+  .version('0.0.1')
+  .usage('[options] <file ..>')
+  .option('-t --time <elapsedtime>', 'time elapse', parseInt)
+  .option(-'i --input <inputfile>', 'input stl file', String)
+  .parse(process.argv);
