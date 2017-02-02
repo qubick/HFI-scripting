@@ -1,0 +1,28 @@
+{
+  "name": "inserted-model-slicer",
+  "version": "0.0.1",
+  "description": "A command line tool for slicing a 3D model with inserted mesh in the middle of printing process",
+  "main": "lib/ndex.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qubick/HFI-scripting"
+  },
+  "keywords": [
+    "3d_printing",
+    "slicing",
+    "insertion"
+  ],
+  "author": "Jeeeun Kim <qubick.kim@gmail.com> (http://jeeeunkim.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qubick/HFI-scripting/issues"
+  },
+  "homepage": "https://github.com/qubick/HFI-scripting",
+  "preferGlobal": true,
+  "bin": {
+  	"run": "bin/translate"
+  }
+}

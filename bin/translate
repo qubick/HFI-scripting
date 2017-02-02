@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 
-var translate = require('../lib'),
+var run = require('../lib')
+    ,co = require('co')
+    ,prompt = require('co-prompt')
     program = require('commander')
 
-
 program
-    .command('run')
+    .command('translator') 
     .description('take semantics to run gcode generator')
-    .action(function(src, options)){
+    .action(function(src, options){
       if(program.time)
         run.translator(program)
     });
@@ -15,6 +16,7 @@ program
 program
   .version('0.0.1')
   .usage('[options] <file ..>')
-  .option('-t --time <elapsedtime>', 'time elapse', parseInt)
-  .option(-'i --input <inputfile>', 'input stl file', String)
+  .arguments('<file>')
+  .option('-t, --time <elapsedtime>', 'time elapse')
+  .option('-i, --input <inputfile>', 'input stl file')
   .parse(process.argv);
